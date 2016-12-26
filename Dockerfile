@@ -47,13 +47,6 @@ RUN echo y | android update sdk --no-ui --all --filter build-tools-20.0.0 | grep
 RUN echo y | android update sdk --no-ui --all --filter build-tools-19.1.0 | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter build-tools-17.0.0 | grep 'package installed'
 
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-24 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-22 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-21 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-19 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-17 | grep 'package installed'
-RUN echo y | android update sdk --no-ui --all --filter sys-img-armeabi-v7a-android-15 | grep 'package installed'
-
 RUN echo y | android update sdk --no-ui --all --filter extra-android-m2repository | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-google-m2repository | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter extra-google-google_play_services | grep 'package installed'
@@ -66,4 +59,4 @@ ENV GRADLE_BIN_PATH /opt/gradle/bin
 RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-bin.zip
 RUN cd /opt && unzip gradle.zip
 RUN cd /opt && mv gradle-2.14.1 /opt/gradle
-ENV PATH ${PATH}:/opt/gradle/bin
+ENV PATH ${PATH}:${GRADLE_BIN_PATH}
