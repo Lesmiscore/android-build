@@ -66,5 +66,5 @@ RUN wget --quiet --output-document=gradle.zip https://services.gradle.org/distri
 RUN unzip -q gradle.zip
 ENV PATH ${PATH}:gradle-2.14.1/bin/
 
-ENTRYPOINT ["/bin/bash"]
+#ENTRYPOINT ["/bin/bash"]
 
