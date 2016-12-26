@@ -62,9 +62,7 @@ RUN echo y | android update sdk --no-ui --all --filter addon-google_apis-google-
 RUN echo y | android update sdk --no-ui --all --filter addon-google_apis-google-22 | grep 'package installed'
 RUN echo y | android update sdk --no-ui --all --filter addon-google_apis-google-21 | grep 'package installed'
 
-RUN wget --quiet --output-document=gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-bin.zip
-RUN unzip -q gradle.zip
-ENV PATH ${PATH}:gradle-2.14.1/bin/
-
-#ENTRYPOINT ["/bin/bash"]
+RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-bin.zip
+RUN cd /opt && unzip gradle.zip
+ENV PATH ${PATH}:/opt/gradle-2.14.1/bin/
 
