@@ -1,4 +1,4 @@
-FROM maven:3-jdk-8
+FROM openjdk:8-jdk
 MAINTAINER nao20010128nao
 
 ENV ANDROID_HOME /opt/android-sdk-linux
