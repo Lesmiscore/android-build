@@ -21,3 +21,6 @@ You should install only one image per a command because SDK installer may requir
 
 ## Where is the Dockerfile for this image?
 [Here.](https://github.com/nao20010128nao/android-build/blob/master/Dockerfile)
+
+***
+This Dockerfile is based on [bitrise-docker](https://github.com/bitrise-docker/)'s [android](https://github.com/bitrise-docker/android) repository.
