@@ -18,3 +18,6 @@ Only setups environment to build your app.
 ## I want to install more SDK packages. How to do it?
 - Just use `echo y | android update sdk --no-ui --all --filter PACKAGE_TO_INSTALL`
 You should install only one image per a command because SDK installer may requires more than one license to agree.   
+
+## Where is the Dockerfile for this image?
+[Here.](https://github.com/nao20010128nao/android-build/blob/master/Dockerfile)
