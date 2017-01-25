@@ -1,4 +1,5 @@
 FROM nao20010128nao/android-build:latest
+MAINTAINER nao20010128nao
 
 ENV ANDROID_NDK_HOME /opt/android-ndk
 
