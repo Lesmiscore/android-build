@@ -20,9 +20,3 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 ADD install_sdk_packages.sh /usr/local/bin/install_sdk_packages.sh
 RUN chmod +x /usr/local/bin/install_sdk_packages.sh
 RUN /usr/local/bin/install_sdk_packages.sh
-
-ENV GRADLE_BIN_PATH /opt/gradle/bin
-RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-2.14.1-bin.zip | tee /dev/null
-RUN cd /opt && unzip gradle.zip
-RUN cd /opt && mv gradle-2.14.1 /opt/gradle
-ENV PATH ${PATH}:${GRADLE_BIN_PATH}
