@@ -1,4 +1,4 @@
-FROM openjdk:8-jdk
+FROM nao20010128nao/android-build:gradle-2.14.1
 MAINTAINER nao20010128nao
 
 ENV ANDROID_HOME /opt/android-sdk-linux
