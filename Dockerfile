@@ -20,3 +20,6 @@ ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 ADD install_sdk_packages.sh /usr/local/bin/install_sdk_packages.sh
 RUN chmod +x /usr/local/bin/install_sdk_packages.sh
 RUN /usr/local/bin/install_sdk_packages.sh
+
+ADD install_sdk_packages.sh /usr/local/bin/install_sdk_package
+RUN chmod +x /usr/local/bin/install_sdk_package

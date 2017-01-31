@@ -17,9 +17,10 @@ Only setups environment to build your app.
 - Android NDK r13b (Only `ndk` tag)
 
 ## I want to install more SDK packages. How to do it?
-- Just use `echo y | android update sdk --no-ui --all --filter PACKAGE_TO_INSTALL`
+- Just use `install_sdk_package PACKAGE_TO_INSTALL`
 You should install only one image per a command because SDK installer may requires more than one license to agree.   
 
 ## Dockerfiles
 `latest` [Dockerfile](https://github.com/nao20010128nao/android-build/blob/master/Dockerfile) based on [bitrise-docker](https://github.com/bitrise-docker/)'s [android](https://github.com/bitrise-docker/android)    
 `ndk` [Dockerfile](https://github.com/nao20010128nao/android-build/blob/master/ndk/Dockerfile) based on [bitrise-docker](https://github.com/bitrise-docker/)'s [android-ndk](https://github.com/bitrise-docker/android-ndk)    
+`gradle-2.14.1` [Dockerfile](https://github.com/nao20010128nao/android-build/blob/master/gradle-2.14.1/Dockerfile)     

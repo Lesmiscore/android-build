@@ -1,0 +1,2 @@
+#!/bin/sh
+echo y | android update sdk --no-ui --all --filter "$1"

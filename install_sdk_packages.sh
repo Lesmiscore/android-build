@@ -1,3 +1,4 @@
+#!/bin/sh
 echo y | android update sdk --no-ui --all --filter platform-tools | grep 'package installed'
 
 echo y | android update sdk --no-ui --all --filter android-25 | grep 'package installed'
