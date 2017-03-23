@@ -4,15 +4,15 @@ services:
   - docker
 
 before_script:
-  - sh -c "$DOCKER_LOGIN_COMMAND"
+  - sh -c "$DOCKER_LOGIN_COMMAND" > /dev/null
 
 script:
-  - docker build nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1/
+  - docker build -t nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1/
   - docker push nao20010128nao/android-build:gradle-2.14.1
   
-  - docker build nao20010128nao/android-build:latest .
+  - docker build -t nao20010128nao/android-build:latest .
   - docker push nao20010128nao/android-build:latest
   
-  - docker build nao20010128nao/android-build:ndk ndk/
+  - docker build -t nao20010128nao/android-build:ndk ndk/
   - docker push nao20010128nao/android-build:ndk
   
