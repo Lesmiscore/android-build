@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+  - docker
+
+before_script:
+  - sh -c "$DOCKER_LOGIN_COMMAND"
+
+script:
+  - docker build nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1/
+  - docker push nao20010128nao/android-build:gradle-2.14.1
+  
+  - docker build nao20010128nao/android-build:latest .
+  - docker push nao20010128nao/android-build:latest
+  
+  - docker build nao20010128nao/android-build:ndk ndk/
+  - docker push nao20010128nao/android-build:ndk
+  
