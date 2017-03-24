@@ -5,7 +5,7 @@ ENV ANDROID_HOME /opt/android-sdk-linux
 ENV PATH ${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
 
 ADD install_sdk_packages.sh /usr/local/bin/install_sdk_packages.sh
-ADD install_sdk_packages.sh /usr/local/bin/install_sdk_package
+ADD install_sdk_package /usr/local/bin/install_sdk_package
 
 RUN apt-get update -qq && \
     dpkg --add-architecture i386 && \
@@ -21,4 +21,4 @@ RUN apt-get update -qq && \
     chmod +x /usr/local/bin/install_sdk_packages.sh && \
     chmod +x /usr/local/bin/install_sdk_package && \
     sync && \
-    cat `which install_sdk_packages.sh` | sh
+    install_sdk_packages.sh
