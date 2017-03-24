@@ -21,4 +21,4 @@ RUN apt-get update -qq && \
     chmod +x /usr/local/bin/install_sdk_packages.sh && \
     chmod +x /usr/local/bin/install_sdk_package && \
     sync && \
-    install_sdk_packages.sh
+    cat install_sdk_packages.sh | sh
