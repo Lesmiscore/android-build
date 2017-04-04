@@ -1,5 +1,6 @@
 # android-build
 Docker image for building Android apps on CIs for myself (Not intended to be used on individual computers)    
+[![Build Status](https://travis-ci.org/nao20010128nao/android-build.svg?branch=master)](https://travis-ci.org/nao20010128nao/android-build)
 
 ## What does this image do?
 Only setups environment to build your app.   
