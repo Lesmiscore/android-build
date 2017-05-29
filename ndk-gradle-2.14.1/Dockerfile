@@ -1,4 +1,4 @@
-FROM nao20010128nao/android-build:sdk-gradle2.14.1
+FROM nao20010128nao/android-build:sdk-gradle-2.14.1
 MAINTAINER nao20010128nao
 
 ENV ANDROID_NDK_HOME=/opt/android-ndk PATH=${PATH}:${ANDROID_NDK_HOME}:${ANDROID_HOME}/cmake/bin
