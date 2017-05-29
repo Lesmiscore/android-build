@@ -17,7 +17,7 @@ script:
   - docker build -t nao20010128nao/android-build:sdk-gradle-2.14.1 -t nao20010128nao/android-build:latest sdk-gradle-2.14.1
   - docker push nao20010128nao/android-build:sdk-gradle-2.14.1
   
-  - docker build -t nao20010128nao/android-build:ndk-gradle-2.14.1 ndk-gradle-2.14.1
+  - docker build -t nao20010128nao/android-build:ndk-gradle-2.14.1 -t nao20010128nao/android-build:ndk ndk-gradle-2.14.1
   - docker push nao20010128nao/android-build:ndk-gradle-2.14.1
   
   # Gradle 3.3
@@ -31,3 +31,4 @@ script:
   - docker push nao20010128nao/android-build:ndk-gradle-3.3
   
   - docker push nao20010128nao/android-build:latest
+  - docker push nao20010128nao/android-build:ndk
