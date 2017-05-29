@@ -8,6 +8,8 @@ services:
 
 before_script:
   - sh -c "$DOCKER_LOGIN_COMMAND" > /dev/null
+  - cp install_sdk_package* sdk-gradle-2.14.1
+  - cp install_sdk_package* sdk-gradle-3.3
 
 script:
   # Gradle 2.14.1
