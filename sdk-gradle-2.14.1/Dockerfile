@@ -1,7 +1,7 @@
 FROM nao20010128nao/android-build:gradle-2.14.1
 MAINTAINER nao20010128nao
 
-ENV ANDROID_HOME=/opt/android-sdk-linux PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools
+ENV ANDROID_HOME=/opt/android-sdk-linux PATH=${PATH}:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${ANDROID_HOME}/platform-tools
 
 ADD install_sdk_packages.sh /usr/local/bin/install_sdk_packages.sh
 ADD install_sdk_package /usr/local/bin/install_sdk_package

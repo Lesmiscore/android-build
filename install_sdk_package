@@ -1,2 +1,2 @@
 #!/bin/sh
-echo y | android update sdk --no-ui --all --filter "$1"
+echo y | sdkmanager "$1"
