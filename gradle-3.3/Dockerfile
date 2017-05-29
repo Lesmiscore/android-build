@@ -1,4 +1,4 @@
-FROM nao20010128nao/my-docker-images:openjdk-8-jdk-ubuntu
+FROM nao20010128nao/my-docker-images:openjdk-8-jdk-ubuntu-old
 MAINTAINER nao20010128nao
 
 ENV GRADLE_BIN_PATH=/opt/gradle/bin PATH=${PATH}:${GRADLE_BIN_PATH}
