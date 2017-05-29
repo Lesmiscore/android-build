@@ -10,12 +10,24 @@ before_script:
   - sh -c "$DOCKER_LOGIN_COMMAND" > /dev/null
 
 script:
-  - docker build -t nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1/
+  # Gradle 2.14.1
+  - docker build -t nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1
   - docker push nao20010128nao/android-build:gradle-2.14.1
   
-  - docker build -t nao20010128nao/android-build:latest .
+  - docker build -t nao20010128nao/android-build:sdk-gradle-2.14.1 -t nao20010128nao/android-build:latest sdk-gradle-2.14.1
+  - docker push nao20010128nao/android-build:sdk-gradle-2.14.1
+  
+  - docker build -t nao20010128nao/android-build:ndk-gradle-2.14.1 ndk-gradle-2.14.1
+  - docker push nao20010128nao/android-build:ndk-gradle-2.14.1
+  
+  # Gradle 3.3
+  - docker build -t nao20010128nao/android-build:gradle-3.3 gradle-3.3
+  - docker push nao20010128nao/android-build:gradle-3.3
+  
+  - docker build -t nao20010128nao/android-build:sdk-gradle-3.3 sdk-gradle-3.3
+  - docker push nao20010128nao/android-build:sdk-gradle-3.3
+  
+  - docker build -t nao20010128nao/android-build:ndk-gradle-3.3 ndk-gradle-3.3
+  - docker push nao20010128nao/android-build:ndk-gradle-3.3
+  
   - docker push nao20010128nao/android-build:latest
-  
-  - docker build -t nao20010128nao/android-build:ndk ndk/
-  - docker push nao20010128nao/android-build:ndk
-  
