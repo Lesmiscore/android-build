@@ -7,6 +7,7 @@ before_script:
   - sh -c "$DOCKER_LOGIN_COMMAND" > /dev/null
   - cp install_sdk_package* sdk-gradle-2.14.1
   - cp install_sdk_package* sdk-gradle-3.3
+  - cp install_sdk_package* sdk-gradle-3.4.1
 
 stages:
   - gradle
@@ -54,4 +55,25 @@ ndk-gradle-3.3:
   script:
     - docker build -t nao20010128nao/android-build:ndk-gradle-3.3 ndk-gradle-3.3
     - docker push nao20010128nao/android-build:ndk-gradle-3.3
+
+
+# Gradle 3.4.1
+
+gradle-3.4.1:
+  stage: gradle
+  script:
+    - docker build -t nao20010128nao/android-build:gradle-3.4.1 gradle-3.4.1
+    - docker push nao20010128nao/android-build:gradle-3.4.1
+
+sdk-gradle-3.4.1:
+  stage: sdk
+  script:
+    - docker build -t nao20010128nao/android-build:sdk-gradle-3.4.1 sdk-gradle-3.4.1
+    - docker push nao20010128nao/android-build:sdk-gradle-3.4.1
+
+ndk-gradle-3.4.1:
+  stage: ndk
+  script:
+    - docker build -t nao20010128nao/android-build:ndk-gradle-3.4.1 ndk-gradle-3.4.1
+    - docker push nao20010128nao/android-build:ndk-gradle-3.4.1
 
