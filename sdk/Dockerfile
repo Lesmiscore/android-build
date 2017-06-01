@@ -1,4 +1,6 @@
-FROM nao20010128nao/android-build:gradle-3.3
+ARG GRADLE_VERSION
+ARG ANDROID_SDK_VERSION=25.2.4
+FROM nao20010128nao/android-build:gradle-${GRADLE_VERSION}
 MAINTAINER nao20010128nao
 
 ENV ANDROID_HOME=/opt/android-sdk-linux
@@ -13,7 +15,7 @@ RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y libc6:i386 libstdc++6:i386 libgcc1:i386 libncurses5:i386 libz1:i386 wget && \
     rm -rf /var/lib/apt/lists/* && \
     
-    cd /opt && wget -q https://dl.google.com/android/repository/tools_r25.2.4-linux.zip -O android-sdk-tools.zip && \
+    cd /opt && wget -q https://dl.google.com/android/repository/tools_r${ANDROID_SDK_VERSION}-linux.zip -O android-sdk-tools.zip && \
     unzip -q android-sdk-tools.zip && \
     mkdir -p ${ANDROID_HOME} && \
     mv tools/ ${ANDROID_HOME}/tools/ && \

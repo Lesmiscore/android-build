@@ -1,8 +1,9 @@
+ARG GRADLE_VERSION
 FROM nao20010128nao/my-docker-images:openjdk-8-jdk-ubuntu-old
 MAINTAINER nao20010128nao
 
 ENV GRADLE_BIN_PATH=/opt/gradle/bin PATH=${PATH}:/opt/gradle/bin
 
-RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-3.3-bin.zip&& \
+RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip&& \
     unzip gradle.zip && \
-    mv gradle-3.3 /opt/gradle
+    mv gradle-2.14.1 /opt/gradle

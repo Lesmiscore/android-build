@@ -5,55 +5,52 @@ services:
 
 before_script:
   - sh -c "$DOCKER_LOGIN_COMMAND" > /dev/null
-  - cp install_sdk_package* sdk-gradle-2.14.1
-  - cp install_sdk_package* sdk-gradle-3.3
-  - cp install_sdk_package* sdk-gradle-3.4.1
+  - cp install_sdk_package* sdk
 
 stages:
   - gradle
   - sdk
   - ndk
+  - tagging
 
 # Gradle 2.14.1
 
 gradle-2.14.1:
   stage: gradle
   script:
-    - docker build -t nao20010128nao/android-build:gradle-2.14.1 gradle-2.14.1
+    - docker build -t nao20010128nao/android-build:gradle-2.14.1 --build-args GRADLE_VERSION=2.14.1 gradle
     - docker push nao20010128nao/android-build:gradle-2.14.1
 
 sdk-gradle-2.14.1:
   stage: sdk
   script:
-    - docker build -t nao20010128nao/android-build:sdk-gradle-2.14.1 -t nao20010128nao/android-build:latest sdk-gradle-2.14.1
+    - docker build -t nao20010128nao/android-build:sdk-gradle-2.14.1 --build-args GRADLE_VERSION=2.14.1 sdk
     - docker push nao20010128nao/android-build:sdk-gradle-2.14.1
-    - docker push nao20010128nao/android-build:latest
 
 ndk-gradle-2.14.1:
   stage: ndk
   script:
-    - docker build -t nao20010128nao/android-build:ndk-gradle-2.14.1 -t nao20010128nao/android-build:ndk ndk-gradle-2.14.1
+    - docker build -t nao20010128nao/android-build:ndk-gradle-2.14.1 --build-args GRADLE_VERSION=2.14.1 ndk
     - docker push nao20010128nao/android-build:ndk-gradle-2.14.1
-    - docker push nao20010128nao/android-build:ndk
 
 # Gradle 3.3
 
 gradle-3.3:
   stage: gradle
   script:
-    - docker build -t nao20010128nao/android-build:gradle-3.3 gradle-3.3
+    - docker build -t nao20010128nao/android-build:gradle-3.3 --build-args GRADLE_VERSION=3.3 gradle
     - docker push nao20010128nao/android-build:gradle-3.3
 
 sdk-gradle-3.3:
   stage: sdk
   script:
-    - docker build -t nao20010128nao/android-build:sdk-gradle-3.3 sdk-gradle-3.3
+    - docker build -t nao20010128nao/android-build:sdk-gradle-3.3 --build-args GRADLE_VERSION=3.3 sdk
     - docker push nao20010128nao/android-build:sdk-gradle-3.3
 
 ndk-gradle-3.3:
   stage: ndk
   script:
-    - docker build -t nao20010128nao/android-build:ndk-gradle-3.3 ndk-gradle-3.3
+    - docker build -t nao20010128nao/android-build:ndk-gradle-3.3 --build-args GRADLE_VERSION=3.3 ndk
     - docker push nao20010128nao/android-build:ndk-gradle-3.3
 
 
@@ -62,18 +59,32 @@ ndk-gradle-3.3:
 gradle-3.4.1:
   stage: gradle
   script:
-    - docker build -t nao20010128nao/android-build:gradle-3.4.1 gradle-3.4.1
+    - docker build -t nao20010128nao/android-build:gradle-3.4.1 --build-args GRADLE_VERSION=3.4.1 gradle
     - docker push nao20010128nao/android-build:gradle-3.4.1
 
 sdk-gradle-3.4.1:
   stage: sdk
   script:
-    - docker build -t nao20010128nao/android-build:sdk-gradle-3.4.1 sdk-gradle-3.4.1
+    - docker build -t nao20010128nao/android-build:sdk-gradle-3.4.1 --build-args GRADLE_VERSION=3.4.1 sdk
     - docker push nao20010128nao/android-build:sdk-gradle-3.4.1
 
 ndk-gradle-3.4.1:
   stage: ndk
   script:
-    - docker build -t nao20010128nao/android-build:ndk-gradle-3.4.1 ndk-gradle-3.4.1
+    - docker build -t nao20010128nao/android-build:ndk-gradle-3.4.1 --build-args GRADLE_VERSION=3.4.1 ndk
     - docker push nao20010128nao/android-build:ndk-gradle-3.4.1
 
+
+# Misc
+tagging:
+  stage: tagging
+  script:
+    - docker pull nao20010128nao/android-build:sdk-gradle-2.14.1
+    - docker pull nao20010128nao/android-build:ndk-gradle-2.14.1
+    - docker tag nao20010128nao/android-build:sdk-gradle-2.14.1 nao20010128nao/android-build:latest
+    - docker tag nao20010128nao/android-build:sdk-gradle-2.14.1 nao20010128nao/android-build:sdk
+    - docker tag nao20010128nao/android-build:ndk-gradle-2.14.1 nao20010128nao/android-build:ndk
+    - docker push nao20010128nao/android-build:latest
+    - docker push nao20010128nao/android-build:ndk
+    - docker push nao20010128nao/android-build:sdk
+    
