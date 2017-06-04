@@ -11,7 +11,7 @@ RUN set -x && apt-get update -qq && apt upgrade -y -qq && apt-get clean && rm -r
 
     mkdir /opt/android-ndk-tmp && \
     cd /opt/android-ndk-tmp && wget -q https://dl.google.com/android/repository/android-ndk-r${ANDROID_NDK_VERSION}-linux-x86_64.zip && \
-    unzip -q android-ndk-${ANDROID_NDK_VERSION}-linux-x86_64.zip && mv ./android-ndk-r${ANDROID_NDK_VERSION} ${ANDROID_NDK_HOME} && \
+    unzip -q android-ndk-r${ANDROID_NDK_VERSION}-linux-x86_64.zip && mv ./android-ndk-r${ANDROID_NDK_VERSION} ${ANDROID_NDK_HOME} && \
     rm -rf /opt/android-ndk-tmp && \
 
     mkdir /opt/android-cmake-tmp && \
