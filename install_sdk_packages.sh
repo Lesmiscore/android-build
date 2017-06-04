@@ -54,6 +54,6 @@ install_sdk_package "extras;android;m2repository"
 install_sdk_package "extras;google;m2repository"
 install_sdk_package "extras;google;google_play_services"
 
-install_sdk_package "addon-google_apis-google-23" || true
-install_sdk_package "addon-google_apis-google-22" || true
-install_sdk_package "addon-google_apis-google-21" || true
+install_sdk_package "add-ons;addon-google_apis-google-23" || true
+install_sdk_package "add-ons;addon-google_apis-google-22" || true
+install_sdk_package "add-ons;addon-google_apis-google-21" || true
