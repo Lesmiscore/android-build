@@ -6,4 +6,5 @@ ENV GRADLE_BIN_PATH=/opt/gradle/bin PATH=${PATH}:/opt/gradle/bin
 
 RUN cd /opt && wget --output-document=gradle.zip https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip && \
     unzip gradle.zip && \
+    rm gradle.zip && \
     mv gradle-${GRADLE_VERSION} /opt/gradle

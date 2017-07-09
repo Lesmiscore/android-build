@@ -53,7 +53,6 @@ ndk-gradle-3.3:
     - docker build -t nao20010128nao/android-build:ndk-gradle-3.3 --build-arg GRADLE_VERSION=3.3 ndk
     - docker push nao20010128nao/android-build:ndk-gradle-3.3
 
-
 # Gradle 3.4.1
 
 gradle-3.4.1:
@@ -73,6 +72,26 @@ ndk-gradle-3.4.1:
   script:
     - docker build -t nao20010128nao/android-build:ndk-gradle-3.4.1 --build-arg GRADLE_VERSION=3.4.1 ndk
     - docker push nao20010128nao/android-build:ndk-gradle-3.4.1
+
+# Gradle 3.5
+
+gradle-3.5:
+  stage: gradle
+  script:
+    - docker build -t nao20010128nao/android-build:gradle-3.5 --build-arg GRADLE_VERSION=3.5 gradle
+    - docker push nao20010128nao/android-build:gradle-3.5
+
+sdk-gradle-3.5:
+  stage: sdk
+  script:
+    - docker build -t nao20010128nao/android-build:sdk-gradle-3.5 --build-arg GRADLE_VERSION=3.5 sdk
+    - docker push nao20010128nao/android-build:sdk-gradle-3.5
+
+ndk-gradle-3.5:
+  stage: ndk
+  script:
+    - docker build -t nao20010128nao/android-build:ndk-gradle-3.5 --build-arg GRADLE_VERSION=3.5 ndk
+    - docker push nao20010128nao/android-build:ndk-gradle-3.5
 
 
 # Misc
