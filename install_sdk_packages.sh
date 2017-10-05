@@ -1,6 +1,7 @@
 #!/bin/sh
 install_sdk_package "platform-tools"
 
+install_sdk_package "platforms;android-26"
 install_sdk_package "platforms;android-25"
 install_sdk_package "platforms;android-24"
 install_sdk_package "platforms;android-23"
@@ -18,6 +19,8 @@ install_sdk_package "platforms;android-12"
 install_sdk_package "platforms;android-11"
 install_sdk_package "platforms;android-10"
 
+install_sdk_package "build-tools;26.0.1"
+install_sdk_package "build-tools;26.0.0"
 install_sdk_package "build-tools;25.2.5"
 install_sdk_package "build-tools;25.0.3"
 install_sdk_package "build-tools;25.0.2"
